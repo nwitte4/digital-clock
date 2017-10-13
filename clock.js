@@ -68,19 +68,28 @@ greeting.innerText = `And it is ${currentDay}, my dudes.`
 
 clockDisplay.innerText = `
         ${currentMonth} ${currentDate}th ${currentYear}
+
 ${currentHour} : ${currentMinute} : ${currentSecond} ${timeOfDay}
 `;
+
+body.classList.remove('night');
+body.classList.remove('evening');
+body.classList.remove('morning')
 
 
 if(timeOfDay === 'AM'){
   ending.innerHTML = `GOOD MORNING, ${input}! Today is...`;
+  body.classList.add('morning');
 } else {
   if(currentHour < 4){
     ending.innerHTML = `GOOD AFTERNOON, ${input}! Today is...`;
+    body.classList.add('evening');
   } else if(currentHour > 4 && currentHour < 9){
     ending.innerHTML = `GOOD EVENING, ${input}! Today is...`;
+    body.classList.add('evening');
   } else {
     ending.innerHTML = `GOOD NIGHT, ${input}! Today is...`;
+    body.classList.add('night');
   }
 }
 

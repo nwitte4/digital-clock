@@ -4,32 +4,44 @@
 }
 
 body {
-  background-color: #aab6c4;
+  /*background-color: #aab6c4;*/
+  background: radial-gradient(circle at top 0% right 50%, yellow 0%, transparent 20%, lightyellow 40%);
 }
 
+.morning {
+  background: radial-gradient(circle at top, yellow, yellow, orange, lightblue, lightblue, lightblue, lightblue 90%);
+}
+.evening{
+  background: radial-gradient(circle at center, yellow 0, lightblue, lightblue 90%);
+}
+.night{
+  background: radial-gradient(circle at bottom, yellow 0, pink 30%, lightblue 100%)
+}
+
+
 #clock{
-  height: 200px;
-  width: 900px;
   margin: 0 auto;
-  position: fixed;
+  position: absolute; /* or fixed? fixed allows the time to remain in the center when you scroll up and down the page*/
   font-size: 80px;
   color: white;
   text-align: center;
-  top: 90px; left: 0; bottom: 0; right: 0;
+  top: calc(50vh - 200px);
+  left: 0; bottom: 0; right: 0;
   letter-spacing: 15px;
   text-shadow: 2px 2px #ff0000;
   font-family: 'Orbitron', serif;
 }
 
 .container{
-  width: 300px;
-  height: 300px;
+  width: 50vh;
+  height: 50vw;
   padding: 100px 100px;
 }
 
 #greeting {
   text-align: center;
   font-size: 40pt;
+  margin-bottom: 50px;
   color: white;
   text-shadow: 2px 2px grey;
   font-family: 'Amactic+SC', serif;
