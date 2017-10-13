@@ -1,4 +1,4 @@
-var input = prompt('What is your name?')
+var input = prompt('What is your name?') || 'You'
 
 function heyYouGotTheTime(){
   var currentTime   = new Date();
@@ -81,7 +81,8 @@ ${currentHour} : ${currentMinute} : ${currentSecond} ${timeOfDay}
 `;
 // This removes the background HTML,
 // morning, evening and night all correspond to a 'sunset'-like background image
-// the following code on lines 90-104 will add the classes back in the appropriate order
+// morning has a 'sun' at the top, afternoon has a 'sun' in the middle, evening has a 'sun' at the bottom, and night is no sun/a black background
+// the following code on lines 91-105 will add the classes back in the appropriate order
 body.classList.remove('night');
 body.classList.remove('evening');
 body.classList.remove('afternoon');
