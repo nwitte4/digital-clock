@@ -4,53 +4,55 @@
 }
 
 body {
-  /*background-color: #aab6c4;*/
-  background: radial-gradient(circle at top 0% right 50%, yellow 0%, transparent 20%, lightyellow 40%);
+  background-color: #aab6c4;
 }
 
 .morning {
   background: radial-gradient(circle at top, yellow, yellow, orange, lightblue, lightblue, lightblue, lightblue 90%);
 }
-.evening{
+.afternoon{
   background: radial-gradient(circle at center, yellow 0, lightblue, lightblue 90%);
 }
-.night{
+.evening{
   background: radial-gradient(circle at bottom, yellow 0, pink 30%, lightblue 100%)
 }
-
+.night{
+  background: black;
+}
 
 #clock{
   margin: 0 auto;
   position: absolute; /* or fixed? fixed allows the time to remain in the center when you scroll up and down the page*/
-  font-size: 80px;
-  color: white;
   text-align: center;
-  top: calc(50vh - 200px);
+  top: calc(50vh - 210px);
   left: 0; bottom: 0; right: 0;
   letter-spacing: 15px;
   text-shadow: 2px 2px #ff0000;
+  color: white;
+  font-size: 80px;
   font-family: 'Orbitron', serif;
+  display: inline;
 }
 
 .container{
   width: 50vh;
   height: 50vw;
-  padding: 100px 100px;
+  padding: 80px 80px;
 }
 
 #greeting {
-  text-align: center;
-  font-size: 40pt;
   margin-bottom: 50px;
-  color: white;
+  text-align: center;
   text-shadow: 2px 2px grey;
-  font-family: 'Amactic+SC', serif;
+  color: white;
+  font-size: 50pt;
+  font-family: 'Amatic SC', cursive;
 }
 #ending{
-  text-align: center;
-  font-size: 35pt;
-  color: white;
-  text-shadow: 2px 2px grey;
-  font-family: 'Amactic+SC', serif;
   margin-top: 50px;
+  text-align: center;
+  text-shadow: 2px 2px grey;
+  color: white;
+  font-size: 40pt;
+  font-family: 'Amatic SC', cursive;
 }

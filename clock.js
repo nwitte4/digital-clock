@@ -14,12 +14,17 @@ function heyYouGotTheTime(){
   var greeting      = document.getElementById('greeting');
   var ending        = document.getElementById('ending');
 
+// This adds zeros when needed
 
   if (currentSecond < 10) { currentSecond = '0' + currentSecond }
   if (currentMinute < 10) { currentMinute = '0' + currentMinute }
   if (currentHour < 10)   { currentHour = '0' + currentHour }
   if (currentHour > 12)   { currentHour = currentHour - 12 ; timeOfDay = 'PM'};
   if (currentHour === 0)  { currentHour = 12 };
+
+// currentDay gives a number from 1-7 and currentMonth assigns a number from 1-12
+// this assigns day string and month string to the appropriate number
+
   if (currentDay === 1){
     currentDay = 'Monday'
   } else if(currentDay === 2){
@@ -62,43 +67,43 @@ function heyYouGotTheTime(){
     currentMonth = 'DEC'
   }
 
+// This displays the proper year
+
   currentYear = currentYear - 100 + 2000;
 
-greeting.innerText = `And it is ${currentDay}, my dudes.`
-
-clockDisplay.innerText = `
+// This tells you what day it is, my dudes
+  greeting.innerText = `And it is ${currentDay}, my dudes.`
+// This displays the actual clock
+  clockDisplay.innerText = `
         ${currentMonth} ${currentDate}th ${currentYear}
 
 ${currentHour} : ${currentMinute} : ${currentSecond} ${timeOfDay}
 `;
-
+// This removes the background HTML,
+// morning, evening and night all correspond to a 'sunset'-like background image
+// the following code on lines 90-104 will add the classes back in the appropriate order
 body.classList.remove('night');
 body.classList.remove('evening');
-body.classList.remove('morning')
+body.classList.remove('afternoon');
+body.classList.remove('morning');
 
-
-if(timeOfDay === 'AM'){
-  ending.innerHTML = `GOOD MORNING, ${input}! Today is...`;
-  body.classList.add('morning');
-} else {
-  if(currentHour < 4){
-    ending.innerHTML = `GOOD AFTERNOON, ${input}! Today is...`;
-    body.classList.add('evening');
-  } else if(currentHour > 4 && currentHour < 9){
-    ending.innerHTML = `GOOD EVENING, ${input}! Today is...`;
-    body.classList.add('evening');
+  if(timeOfDay === 'AM'){
+    ending.innerHTML = `GOOD MORNING, ${input}! Today is...`;
+    body.classList.add('morning');
   } else {
-    ending.innerHTML = `GOOD NIGHT, ${input}! Today is...`;
-    body.classList.add('night');
+    if(currentHour < 4){
+      ending.innerHTML = `GOOD AFTERNOON, ${input}! Today is...`;
+      body.classList.add('afternoon');
+    } else if(currentHour > 4 && currentHour < 9){
+      ending.innerHTML = `GOOD EVENING, ${input}! Today is...`;
+      body.classList.add('evening');
+    } else {
+      ending.innerHTML = `GOOD NIGHT, ${input}! Today is...`;
+      body.classList.add('night');
+    }
   }
-}
 
 }
-
-
-
-// window.addEventListener('onload', alertGreeting)
-
 
 heyYouGotTheTime();
 
