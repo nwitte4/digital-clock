@@ -95,7 +95,7 @@ body.classList.remove('morning');
     if(currentHour < 4){
       ending.innerHTML = `GOOD AFTERNOON, ${input}! Today is...`;
       body.classList.add('afternoon');
-    } else if(currentHour > 4 && currentHour < 9){
+    } else if(currentHour >= 4 && currentHour < 9){
       ending.innerHTML = `GOOD EVENING, ${input}! Today is...`;
       body.classList.add('evening');
     } else {
